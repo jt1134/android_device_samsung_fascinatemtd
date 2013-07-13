@@ -43,11 +43,11 @@ on property:ril.bt_macaddr=*
 
 on fs
 # LVM: set up LVM volumes
-    exec /lvm/sbin/lvm vgscan --mknodes --ignorelockingfailure
-    exec /lvm/sbin/lvm vgchange -aly --ignorelockingfailure
+    #exec /lvm/sbin/lvm vgscan --mknodes --ignorelockingfailure
+    #exec /lvm/sbin/lvm vgchange -aly --ignorelockingfailure
 
     mount ext4 /dev/block/mmcblk0p3 /cache noatime nodev nosuid nomblk_io_submit errors=panic wait
-    mount yaffs2 mtd@datadata /datadata
+    #mount yaffs2 mtd@datadata /datadata
     mount_all fstab.aries
 
 # permissions for bluetooth.
@@ -59,6 +59,7 @@ on fs
 
 # Permissions for System Server and daemons.
     chown system system /sys/class/backlight/s5p_bl/brightness
+    chmod 0666 /sys/class/backlight/s5p_bl/brightness
 
 # change permission for uart_switch
     chown radio radio /sys/class/sec/uart_switch/UART_SEL/value

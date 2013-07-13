@@ -119,9 +119,9 @@ PRODUCT_PACKAGES += \
 	libstagefrighthw
 
 # Device-specific packages
-PRODUCT_PACKAGES += \
-	AriesParts \
-	Torch
+#PRODUCT_PACKAGES += \
+#	AriesParts \
+#	Torch
 
 # Charger
 PRODUCT_PACKAGES += \
